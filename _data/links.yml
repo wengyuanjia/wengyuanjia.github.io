@@ -1,3 +1,21 @@
 - name: 码志
   url: http://mazhuang.org
-  src: life
+  src: www
+
+- name: 文件传输
+  url: http://81.69.253.18/trans/
+  src: my
+
+- name: 图片压缩
+  url: http://81.69.253.18:5000/
+  src: my
+
+- name: thinkphp demo
+  url: http://81.69.253.18:81/
+  src: my
+
+- name: gogs
+  url: http://81.69.253.18:3000/
+  src: my
+
+#60天后将域名转到阿里云再备案

@@ -8,11 +8,11 @@ menu: 链接
 permalink: /links/
 ---
 
-> God made relatives. Thank God we can choose our friends.
+> 自己的服务
 
 <ul>
 {% for link in site.data.links %}
-  {% if link.src == 'life' %}
+  {% if link.src == 'my' %}
   <li><a href="{{ link.url }}" target="_blank">{{ link.name}}</a></li>
   {% endif %}
 {% endfor %}
