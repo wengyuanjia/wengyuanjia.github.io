@@ -1,7 +1,7 @@
 ---
 layout: post
 title: github workflows
-categories: blog
+categories: 经验
 keywords: github workflows
 ---
 
