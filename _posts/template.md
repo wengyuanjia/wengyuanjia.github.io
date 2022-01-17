@@ -6,4 +6,16 @@ description: some word here
 keywords: keyword1, keyword2
 ---
 
-Content here
+
+
+修改后提交 github命令
+
+```shell
+cd ~/WebProject/wengyuanjia.github.io-master
+git add . 
+git commit -a -m "消息"
+git push
+```
+
+
+
