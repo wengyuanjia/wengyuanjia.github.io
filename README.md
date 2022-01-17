@@ -9,7 +9,7 @@ https://github.wengyuanjia.fun/
 * 基于theme [Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll)
 
 
-## 一下信息保留自原作者
+## 以下信息保留自原作者
 
 - [本博客模板常见问题 Q & A](https://mazhuang.org/2020/05/03/blog-template-qna/)。
 
@@ -30,5 +30,4 @@ https://github.wengyuanjia.fun/
 * 杜绝难断句、难理解的长句子，如果不能将其拆分成几个简洁的短句，说明脑中的理解并不清晰。
 
 * 可以学习一下那些高质量的博主，他们的行文，内容组织方式，有什么值得借鉴的地方。
-
 
