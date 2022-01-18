@@ -19,3 +19,7 @@ git push
 
 
 
+```
+chmod 777 blogpush 
+```
+
