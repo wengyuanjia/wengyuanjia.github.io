@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker lnmp
-categories: 经验
+categories: Docker
 keywords:  Docker lnmp
 ---
 > 在linux上安装php集成环境,可以使用宝塔面板.在Mac上自己单独配置过 apache,php,mysql.

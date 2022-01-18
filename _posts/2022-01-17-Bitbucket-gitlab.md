@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bitbucket是什么
-categories: 经验
+categories: git
 keywords: Git GitHub GitLab Bitbucket
 ---
 

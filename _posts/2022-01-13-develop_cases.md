@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 近期开发项目
-categories: 个人
+categories: Blog
 keywords: 工作 APP
 ---
 
@@ -23,7 +23,7 @@ keywords: 工作 APP
 >关键词: `安装黑白名单`  `运行黑名单` `保活`  `权限`  `禁止卸载` `禁用电话`
 
 ### 3.密聊
-用flutter开发的一款即使通讯系统 .除了使用ws,其他基本都是不同的UI开发
+用flutter开发的一款即使通讯系统 .除了使用ws,其他基本都是普通的UI开发
 >关键词:`flutter` `websocket` `http` `图片压缩`  `图片预览`
 
 <img src="/images/app/miliao/1.jpg" alt="" width="120" />
