@@ -10,7 +10,13 @@ keywords: mac php mysql nginx
 
 >docker-lnmp环境改端口,nginx设置比较麻烦.然后也体验了MAMP(破解需要关闭SIP),MxSrvs等集成环境,用着也不习惯.还是单独安装吧,这样方便设置.这里记录一下遇到的坑,大部分是"墙"造成的.
 
-##### nginx `brew install nginx`
+##### 安装nginx
+
+```bash
+brew install nginx
+```
+
+
 
 ##### 安装Php-fpm
 
