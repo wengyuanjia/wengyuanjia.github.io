@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Typora的简单使用技巧
-categories: markdown
-keywords: typora markdown
+title: mac安装php-mysql-nginx
+categories: Mac
+keywords: mac php mysql nginx
 
 ---
 
