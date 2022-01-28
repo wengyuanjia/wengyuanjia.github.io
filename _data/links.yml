@@ -13,17 +13,21 @@
 - name: 图片压缩
   url: http://81.69.253.18:5000/
   src: my
-
-- name: nginx格式化
-  url: http://81.69.253.18:1100/
-  src: my
-
+  
 - name: thinkphp demo
   url: http://81.69.253.18:81/
   src: my
 
 - name: gogs
   url: http://81.69.253.18:3000/
+  src: my
+
+- name: nginx格式化
+  url: http://81.69.253.18:1100/
+  src: my
+
+- name: 视频网站
+  url: http://81.69.253.18:83/
   src: my
 
 #60天后将域名转到阿里云再备案
