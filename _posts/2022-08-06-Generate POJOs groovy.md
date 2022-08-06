@@ -24,7 +24,8 @@ import java.text.SimpleDateFormat
  *   PROJECT     project
  *   FILES       files helper
  */
-packageName = ""
+packageName = "com.weng.zebra.model.po;"
+classSufix ="PO"
 typeMapping = [
         (~/(?i)tinyint|smallint|mediumint|int/)  : "Integer",
         (~/(?i)bigint/)                          : "Long",
@@ -44,10 +45,10 @@ FILES.chooseDirectoryAndSave("Choose directory", "Choose where to store generate
 }
 
 def generate(table, dir) {
-    def className = javaName(table.getName(), true)
+    def className = javaClassName(table.getName(), true)
     def fields = calcFields(table)
-    packageName = getPackageName(dir)
-    PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(new File(dir, className + "DO.java")), "UTF-8"))
+//    packageName = getPackageName(dir)
+    PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(new File(dir, className + classSufix+".java")), "UTF-8"))
     printWriter.withPrintWriter { out -> generate(out, className, fields, table) }
 
 //    new File(dir, className + ".java").withPrintWriter { out -> generate(out, className, fields,table) }
@@ -89,10 +90,9 @@ def generate(out, className, fields, table) {
             " * @author auto\n" +
             " * @date " + new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " \n" +
             " */"
-    out.println "@Setter"
-    out.println "@Getter"
+    out.println "@Data"
     out.println "@TableName(\"" + table.getName() + "\" )"
-    out.println "public class ${className}DO  implements Serializable {"
+    out.println "public class ${className}${classSufix}  implements Serializable {"
     out.println ""
     out.println genSerialID()
     fields.each() {
@@ -150,14 +150,13 @@ def javaClassName(str, capitalize) {
             .join("")
             .replaceAll(/[^\p{javaJavaIdentifierPart}[_]]/, "_")
     // 去除开头的T  http://developer.51cto.com/art/200906/129168.htm
-    s = s[1..s.size() - 1]
+    //删除前缀,前缀ze 所以从2开始截取
+    s = s[2.. - 1]
     capitalize || s.length() == 1 ? s : Case.LOWER.apply(s[0]) + s[1..-1]
 }
 
+//这个用于 参数
 def javaName(str, capitalize) {
-//    def s = str.split(/(?<=[^\p{IsLetter}])/).collect { Case.LOWER.apply(it).capitalize() }
-//            .join("").replaceAll(/[^\p{javaJavaIdentifierPart}]/, "_")
-//    capitalize || s.length() == 1? s : Case.LOWER.apply(s[0]) + s[1..-1]
     def s = com.intellij.psi.codeStyle.NameUtil.splitNameIntoWords(str)
             .collect { Case.LOWER.apply(it).capitalize() }
             .join("")
@@ -185,7 +184,6 @@ static String changeStyle(String str, boolean toCamel) {
 static String genSerialID() {
     return "\tprivate static final long serialVersionUID =  " + Math.abs(new Random().nextLong()) + "L;"
 }
-
 ```
 
 
