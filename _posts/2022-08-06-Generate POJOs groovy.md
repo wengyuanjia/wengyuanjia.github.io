@@ -15,6 +15,7 @@ import com.intellij.database.model.DasTable
 import com.intellij.database.model.ObjectKind
 import com.intellij.database.util.Case
 import com.intellij.database.util.DasUtil
+
 import java.io.*
 import java.text.SimpleDateFormat
 
@@ -91,6 +92,7 @@ def generate(out, className, fields, table) {
             " * @date " + new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " \n" +
             " */"
     out.println "@Data"
+    out.println "@Accessors(chain = true)"
     out.println "@TableName(\"" + table.getName() + "\" )"
     out.println "public class ${className}${classSufix}  implements Serializable {"
     out.println ""
@@ -186,6 +188,7 @@ static String changeStyle(String str, boolean toCamel) {
 static String genSerialID() {
     return "\tprivate static final long serialVersionUID =  " + Math.abs(new Random().nextLong()) + "L;"
 }
+
 ```
 
 
