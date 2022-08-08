@@ -138,6 +138,8 @@ def calcFields(table) {
         //annos   : "\t@Column(name = \"" + col.getName() + "\" )"]
         if ("id".equals(Case.LOWER.apply(col.getName())))
             comm.annos += "@TableId(type = IdType.AUTO)"
+        if("Date".equals(typeStr))
+            comm.annos += "@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)"
         fields += [comm]
     }
 }
