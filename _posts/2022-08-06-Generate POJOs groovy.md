@@ -59,7 +59,7 @@ def generate(table, dir) {
 def getPackageName(dir) {
     return dir.toString().replaceAll("\\\\", ".").replaceAll("/", ".").replaceAll("^.*src(\\.main\\.java\\.)?", "") + ";"
 }
-
+/// 输出文件内容
 def generate(out, className, fields, table) {
     out.println "package $packageName"
     out.println ""
@@ -93,6 +93,7 @@ def generate(out, className, fields, table) {
             " */"
     out.println "@Data"
     out.println "@Accessors(chain = true)"
+    out.println "@JsonInclude(JsonInclude.Include.NON_EMPTY)"
     out.println "@TableName(\"" + table.getName() + "\" )"
     out.println "public class ${className}${classSufix}  implements Serializable {"
     out.println ""
@@ -103,8 +104,8 @@ def generate(out, className, fields, table) {
         if (isNotEmpty(it.comment)) {
             out.println "\t/** ${it.comment.toString()} */"
         }
-
-        if (it.annos != "") out.println "\t${it.annos.replace("@Id", "")}"
+        // 输出注解
+        if (it.annos != "") out.println "${it.annos}"
 
         // 输出成员变量
         out.println "\tprivate ${it.type} ${it.name};"
@@ -139,9 +140,19 @@ def calcFields(table) {
                 annos  : ""]
         //annos   : "\t@Column(name = \"" + col.getName() + "\" )"]
         if ("id".equals(Case.LOWER.apply(col.getName())))
-            comm.annos += "@TableId(type = IdType.AUTO)"
+            comm.annos += "\t@TableId(type = IdType.AUTO)\n"
         if("Date".equals(typeStr))
-            comm.annos += "@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)"
+            comm.annos += "\t@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)\n"
+        def colname = col.getName()
+        def comment = col.getComment()
+        if("created_time".equals(colname) || "updated_time".equals(colname) || "updated_by".equals(colname) ){
+            comm.annos += "\t@ApiModelProperty(hidden = true)\n"
+        }else {
+            comm.annos += "\t@ApiModelProperty(value = \"${comment}\")\n"
+        }
+        if (comm.annos != "")
+            comm.annos = comm.annos[0..-2]
+
         fields += [comm]
     }
 }
