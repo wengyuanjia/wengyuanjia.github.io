@@ -1,5 +1,5 @@
 ---
-layout: post
+:p6spylayout: post
 title: mysql数据库逆向java pojo脚本
 categories: 脚本
 keywords: java spring 脚本
