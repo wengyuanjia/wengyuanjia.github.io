@@ -37,7 +37,7 @@ cat /var/log/mysqld.log|grep 'A temporary password'
 mysql -h localhost -u root -p
 ```
 ```mysql
-alter user user() identified by "Wengyuanjia1!";
+alter user user() identified by "xxxxx";
 use mysql;
 select user,host from user;
 update user set host='%' where user='root';
