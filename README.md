@@ -1,7 +1,16 @@
-## 博客地址
-https://github.wengyuanjia.fun/
+### 写给自己的
+这是一个基于GitHub Pages 的博客
 
-## 如果你也想FORK
+GitHub Pages是一项静态站点托管服务，它直接从 GitHub 上的仓库获取 HTML、CSS 和 JavaScript 文件，通过构建过程运行文件(默认jekyll)，然后发布网站.
+
+一定格式的文件仓库->上传至github->jekyll会利用文件仓库构建一个静态网站.
+
+网站地址默认为 https://wengyuanjia.github.io/
+
+可以设置子域名指向 https://github.wengyuanjia.fun/
+
+
+### 如果你也想FORK
 
 请FORK原作者,连接  [码志](https://github.com/mzlogin/mzlogin.github.io)
 
@@ -9,13 +18,13 @@ https://github.wengyuanjia.fun/
 * 基于theme [Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll)
 
 
-## 以下信息保留自原作者
+### 以下信息保留自原作者
 
 - [本博客模板常见问题 Q & A](https://mazhuang.org/2020/05/03/blog-template-qna/)。
 
 - 在本地预览博客效果可以参考 [Setting up your Pages site locally with Jekyll][2]。
 
-## 经验与思考
+### 经验与思考
 
 * 排版建议遵照一定的规范，推荐 [中文文案排版指北（简体中文版）][1]。
 
